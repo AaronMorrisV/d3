@@ -1,0 +1,15 @@
+Data structure should look like this:
+
+dictionary = {7.5: [[1000, Aug 7 2019],[995, Jan 28 2019],...,[987, Mar 14 2018]]}
+
+//Then to put it in the form: date, size1, size2, size3.... \n
+
+output = "";
+for (var key in dictionary) {
+    // check if the property/key is defined in the object itself, not in parent
+    if (dictionary.hasOwnProperty(key)) {           
+        console.log(key, dictionary[key]);
+	output = output.concat(key + ",");
+    }
+}
+output = output.slice(0,-1); //remove last comma
