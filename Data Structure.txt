@@ -13,3 +13,13 @@ for (var key in dictionary) {
     }
 }
 output = output.slice(0,-1); //remove last comma
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Data structure should look like this:
+
+dictionary = {"Jan 1 2019": {4.5:500, 5:450, 5.5:600, 6:525}, "Jan 2 2019": {4.5:525, 5:0, 5.5:525, 6:550}};
+
+//where 4.5:500 == size:average price for that sale
+//If no sales were made for that day, the average price is set to 0
