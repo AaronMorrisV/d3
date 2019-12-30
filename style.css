@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px; }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+
+#optionWrapper {
+  width: calc(60% - 40px);
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 100px;
+  padding: 20px; }
+  #optionWrapper .option {
+    width: 25%;
+    border: none;
+    float: left;
+    text-align: center; }
+    #optionWrapper .option .jscolor, #optionWrapper .option .dimension {
+      border: none;
+      text-align: center;
+      width: 100px; }
+    #optionWrapper .option .dimension {
+      background-color: whitesmoke; }
+
+#footer {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0; }
+  #footer #author {
+    float: left;
+    padding: 20px; }
+  #footer #original {
+    float: right;
+    padding: 20px; }
+  #footer a {
+    color: white; }
+
+#snow-bg {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image: url("http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png"), url("http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png");
+  -webkit-animation: snow 10s linear infinite;
+  animation: snow 10s linear infinite;
+  background-size: 600px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+@-webkit-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px; }
+  100% {
+    background-position: 1000px 1000px, 200px 400px, -200px 300px; } }
+
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px; }
+  50% {
+    background-position: 500px 500px, 100px 200px, -100px 150px; }
+  100% {
+    background-position: 1000px 1000px, 200px 400px, -200px 300px; } }
+
+@media (max-width: 768px) {
+  .woocommerce ul.products li.product,
+  .woocommerce-page ul.products li.product,
+  .woocommerce-page[class*=columns-] ul.products li.product,
+  .woocommerce[class*=columns-] ul.products li.product {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin: 0 7em; } }
