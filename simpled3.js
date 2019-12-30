@@ -156,7 +156,7 @@ class Graph{
                     var col2 = d3.select('#col2').property('value');
                     var color = d3.scaleOrdinal()
                             .domain(keys)
-                            .range(genColorPal(col1,col2, keys.length)); //d3.schemeDark2
+                            .range(genColorPal(col2,col1, keys.length)); //d3.schemeDark2
                     d3
                         .selectAll("path")
                         .transition()
