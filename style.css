@@ -46,6 +46,16 @@ body {
     padding: 20px; }
   #footer a {
     color: white; }
+  #footer #fuji {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: 700; }
 
 #snow-bg {
   content: '';
