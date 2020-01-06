@@ -9,7 +9,31 @@ body {
   width: 100vw;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
-  transition: 0.5s; }
+  transition: 0.5s;
+  overflow: hidden; }
+
+.colourInput {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100px;
+  border-style: none;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+#graph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
 
 #optionWrapper {
   width: calc(60% - 40px);
@@ -21,7 +45,7 @@ body {
   height: 100px;
   padding: 20px; }
   #optionWrapper .option {
-    width: 25%;
+    width: 33%;
     border: none;
     float: left;
     text-align: center; }
@@ -46,7 +70,7 @@ body {
     padding: 20px; }
   #footer a {
     color: white; }
-  #footer #fuji {
+  #footer #title {
     position: absolute;
     bottom: 0;
     padding-bottom: 20px;
@@ -56,6 +80,30 @@ body {
     transform: translateX(-50%);
     font-size: 30px;
     font-weight: 700; }
+
+.xAxis text {
+  font-size: 10px;
+  -webkit-transform: translateY(-25px);
+  -ms-transform: translateY(-25px);
+  transform: translateY(-25px);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+
+.xAxis line {
+  width: 200px;
+  -webkit-transform: scaleY(70);
+  -ms-transform: scaleY(70);
+  transform: scaleY(70);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s; }
+
+.xAxis path {
+  stroke: none; }
+
+.time {
+  font-size: 20px; }
 
 #snow-bg {
   content: '';

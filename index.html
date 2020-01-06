@@ -4,49 +4,51 @@
     <!-- Load d3.js & color scale-->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="jscolor.js"></script>
     <link rel="stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <title>Mt. Weeb</title>
 </head>
-<body style = "overflow:hidden">
+<body>
+    <!--Snow/Sakura overlay container-->
     <section id="snow-bg"></section>
-    <div style = "width:80%;transform: translate(-50%,-50%); transition:0.3s; position:absolute;top:50%;left:50%;">
-        <div id="graph1" style = "float:left; transform-origin: center center; transition:0.3s;width:50%"></div>
-        <div id="graph2" style = "float:left; transform-origin: center center; transition:0.3s; width:50%"></div>
-    </div>
-    
+    <!--Graph container-->
+    <div id="graph"></div>
+    <!--Interactive header wrapper-->
     <div id = "optionWrapper">
         <div class = "option">
             <h2>Color 1</h2>
-            <input id = "col1" class = "jscolor" value="7063ff" onchange = "sakuraColourChange(this.value);">
+            <input id = "col1" class = "colourInput" value="7063ff">
         </div>
         <div class = "option">
             <h2>Color 2</h2>
-            <input id = "col2" class = "jscolor" value="FFD6FE" onchange = "sakuraColourChange();">
+            <input id = "col2" class = "colourInput" value="FFD6FE">
         </div>
         <div class = "option">
-            <h2>Scale Left</h2>
-            <input id = "scale1" class = "dimension" value = "1" max = "2" step = "0.1" type = "number">
-        </div>
-        <div class = "option">
-            <h2>Scale Right</h2>
-            <input id = "scale2" class = "dimension" value = "1" max = "2" step = "0.1" type = "number">
+            <h2>Scale</h2>
+            <input id = "scale" class = "dimension" value = "1" max = "10" step = "0.1" type = "number">
         </div>
     </div>
+    <!--Footer information-->
     <div id = "footer">
         <h2 id = "author">Made by Aaron Morris</h2>
         <h2 id = "original"><a href = "https://www.d3-graph-gallery.com/graph/streamgraph_template.html" target="_blank">Original Data Vis</a></h2>
-        
-        <h1 id = "fuji">Mt. Fuji</h1>
+        <h1 id = "title">Mt. Fuji</h1>
     </div>
 </body>
+<!--Scripts-->
 <script src = "simpled3.js"></script>
 <script src="colourMatching.js"></script>
 
+
 <script>
-    let graph1 = new Graph(600,400,"data1.csv");
-    graph1.graphInit("#graph1");
-    let graph2 = new Graph(600,400,"data2.csv");
-    graph2.graphInit("#graph2");    
+    //Graph initialisation
+    let graph = new Graph(800,500,"movies2.csv");
+    graph.graphInit();
+    /*graph.colour1 = "ff0000";
+    graph.colour1 = "ff0000";
+    graph.colour2 = "00ff00";
+    graph.colour1 = "70FFCA";*/
+    
+    
 </script>
