@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-    <!-- Load d3.js & color scale-->
+    <title>D3 Graph</title>
     <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <link rel="stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!--jQuery used for makeItRain() by sarahlesh.com-->
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="makeItRain.css">
-    <script src="makeItRain.js" > </script>
+    <script src = "myd3.js"></script>
 
-    <title>D3 Graph</title>
 </head>
 <body>
-    <!--Snow/Sakura overlay container-->
-    <section id="snow-bg"></section>
     <!--Graph container-->
     <div id="graph"></div>
     <!--Interactive header wrapper-->
@@ -39,14 +35,10 @@
         <h1 id = "title">Title</h1>
     </div>
 </body>
-<!--Scripts-->
-<script src = "myd3.js"></script>
-<script src="colourMatching.js"></script>
-
 
 <script>
     //Graph initialisation
-    let graph = new Graph(1000,700, "Movie Revenue");
+    let graph = new Graph(800,600, "Movie Revenue", "movies.csv");
     graph.graphInit();
-    makeItRain();    
+    graph.makeItRain();
 </script>

@@ -7,7 +7,7 @@
 body{
     height:100vh;
     width:100vw;
-    transition:0.5s;
+    transition: 0.5s;
     overflow:hidden;
 }
 
@@ -17,6 +17,7 @@ body{
     width:100px;
     border-style: none;
     transition:0.3s;
+    z-index:1000;
 }
 #graph{
     position:absolute;
@@ -83,7 +84,7 @@ body{
 }
 .xAxis line{
     width:200px;
-    transform: scaleY(100);
+    transform: scaleY(85);
     transition: 0.5s;
 }
 .xAxis path{
@@ -92,38 +93,108 @@ body{
 .time{
     font-size: 20px;
 }
-//Snow courtesy of https://codepen.io/japooteh/pen/mXbdYv
-/*#snow-bg {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
-    animation: snow 10s linear infinite;
-    background-size: 600px;
-    transition:0.3s;
-}
-  
-@keyframes snow {
-    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
-    50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
-    100% {background-position: 1000px 1000px, 200px 400px, -200px 300px;}
+//CSS immediately below is by http://sarahlesh.com/makeItRain/
+@-webkit-keyframes sway {
+	0%{
+		top:-20px;
+		-webkit-transform: rotateX(-20deg);
+        transform: rotateX(-20deg);
+	}
+
+	3%{
+		 margin-left: -2%;
+		     -webkit-transform: rotateX(-80deg);
+          transform: rotateX(-80deg);
+	}
+
+	7% {
+		margin-left:1%;
+		 -webkit-transform: rotateX(-170deg);
+          transform: rotateX(-170deg);
+	}
+  10% {
+    margin-left: 2%;
+	  -webkit-transform: rotateX(-230deg);
+          transform: rotateX(-230deg);
+     }
+   16% {
+   		margin-left: 5%;
+   	    	  -webkit-transform: rotateX(-250deg);
+          transform: rotateX(-250deg);
+   }
+   22% {
+   	 margin-left: 3%;
+   		    -webkit-transform: rotateX(-280deg);
+          transform: rotateX(-280deg);
+   }
+
+  28% {
+    margin-left: 0%;
+    	  -webkit-transform: rotateX(-300deg);
+          transform: rotateX(-300deg);
+     }
+
+  35% {
+  	margin-left: 3.5%;
+  	  -webkit-transform: rotateX(-310deg);
+          transform: rotateX(-310deg);
+  }
+
+  48% {
+    margin-left: 1%;
+     -webkit-transform: rotateX(-350deg);
+          transform: rotateX(-350deg);
+     }
+
+   58% {
+   	margin-left: 3.5%;
+   	 -webkit-transform: rotateX(-310deg);
+          transform: rotateX(-310deg);
+   }
+
+   70%{
+   		margin-left: 0.5%;
+   	   	 -webkit-transform: rotateX(-280deg);
+          transform: rotateX(-280deg);
+   }
+
+  83% {
+    margin-left: -2%;
+     -webkit-transform: rotateX(-230deg);
+          transform: rotateX(-230deg);
+
 }
 
-@media (max-width: 768px) {
-    .woocommerce ul.products li.product, 
-    .woocommerce-page ul.products li.product, 
-    .woocommerce-page[class*=columns-] ul.products li.product,
-    .woocommerce[class*=columns-] ul.products li.product {
-        width: 100%;
-        float: left;
-        clear: both;
-        margin: 0 7em;
-    }
+  95% {
+    margin-left: 2%;
+  -webkit-transform: rotateX(-200deg);
+          transform: rotateX(-200deg);
+     }
+
+  100% {
+    margin-left: 3%;
+    top: 100%; } 
 }
-*/
+
+//CSS immediately below is by http://sarahlesh.com/makeItRain/
+span.billsBillsBills {
+  padding: 5px;
+  display: block;
+  position: absolute;
+  z-index: 100;
+  -webkit-animation: sway 10s ease-out;
+  animation: sway 10s ease-out;
+  opacity:0.4;
+  transition: opacity 1s;
+  width: 200px;
+   }
+//CSS immediately below is by http://sarahlesh.com/makeItRain/
+@-webkit-keyframes drop{
+  0%{
+    top:0%;
+  }
+   
+  100%{
+    top: 100%;
+  }
+}
