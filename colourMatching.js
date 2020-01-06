@@ -105,7 +105,6 @@ function updateAxisColour(){
        lines[i].style.stroke = newColour;
     }
     var texts = document.getElementsByTagName("text");
-    console.log(texts, texts.length);
     for(var i = 0; i < texts.length; i++){
         texts[i].style.fill = newColour;
      }
