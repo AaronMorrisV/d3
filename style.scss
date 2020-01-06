@@ -83,7 +83,7 @@ body{
 }
 .xAxis line{
     width:200px;
-    transform: scaleY(70);
+    transform: scaleY(100);
     transition: 0.5s;
 }
 .xAxis path{
@@ -93,7 +93,7 @@ body{
     font-size: 20px;
 }
 //Snow courtesy of https://codepen.io/japooteh/pen/mXbdYv
-#snow-bg {
+/*#snow-bg {
     content: '';
     display: block;
     position: absolute;
@@ -126,3 +126,4 @@ body{
         margin: 0 7em;
     }
 }
+*/

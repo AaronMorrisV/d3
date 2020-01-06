@@ -7,7 +7,10 @@
     <link rel="stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <title>Mt. Weeb</title>
+    <link rel="stylesheet" type="text/css" href="makeItRain.css">
+    <script src="makeItRain.js" > </script>
+
+    <title>D3 Graph</title>
 </head>
 <body>
     <!--Snow/Sakura overlay container-->
@@ -18,11 +21,11 @@
     <div id = "optionWrapper">
         <div class = "option">
             <h2>Color 1</h2>
-            <input id = "col1" class = "colourInput" value="7063ff">
+            <input id = "col1" class = "colourInput" value="44a828">
         </div>
         <div class = "option">
             <h2>Color 2</h2>
-            <input id = "col2" class = "colourInput" value="FFD6FE">
+            <input id = "col2" class = "colourInput" value="c1ebb5">
         </div>
         <div class = "option">
             <h2>Scale</h2>
@@ -33,7 +36,7 @@
     <div id = "footer">
         <h2 id = "author">Made by Aaron Morris</h2>
         <h2 id = "original"><a href = "https://www.d3-graph-gallery.com/graph/streamgraph_template.html" target="_blank">Original Data Vis</a></h2>
-        <h1 id = "title">Mt. Fuji</h1>
+        <h1 id = "title">Title</h1>
     </div>
 </body>
 <!--Scripts-->
@@ -43,12 +46,7 @@
 
 <script>
     //Graph initialisation
-    let graph = new Graph(1000,700, "Movie Revenue", "movies2.csv");
+    let graph = new Graph(1000,700, "Movie Revenue");
     graph.graphInit();
-    /*graph.colour1 = "ff0000";
-    graph.colour1 = "ff0000";
-    graph.colour2 = "00ff00";
-    graph.colour1 = "70FFCA";*/
-    
-    
+    makeItRain();    
 </script>

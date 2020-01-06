@@ -1,60 +1,37 @@
 /*colour matching*/
 
-//input field colour matching
-updateInputColour(document.getElementById('col1'));
-updateInputColour(document.getElementById('col2'));
-function updateInputColour(_elem){
-    //Ensure correct length of hex code (6 digits)
-    while(_elem.value.length < 6){
-        _elem.value += "f";
-    }
-    if(_elem.value.length > 6){
-        _elem.value = _elem.value.slice(0,6);
-    }
-    //Change background colour of input field
-    _elem.style.backgroundColor = "#"+_elem.value;
-
-    //Change colour of text (black text on light backgrounds, white text on dark backgrounds)
-    if (parseInt(_elem.value.slice(0,2),16)*0.299 + parseInt(_elem.value.slice(2,4),16)*0.587 + parseInt(_elem.value.slice(4,6),16)*0.114 > 186){
-        _elem.style.color = "#000000";
-    } 
-    else{
-        _elem.style.color = "#ffffff";
-    }
-}
-
-//base sepia HSL colour space
-var baseH = 38;
-var baseS = 21.4;
-var baseL = 54.1;
-
 var input1 = document.getElementById("col1");
 var input2 = document.getElementById("col2");
 
 input1.addEventListener('change', function (evt) {
-    sakuraColourChange(this.value,input2.value)
+    moneyColourChange(this.value,input2.value)
     updateInputColour(this);
     backgroundChange();
     updateAxisColour();
+    makeItRain();
+
 });
 input2.addEventListener('change', function (evt) {
-    sakuraColourChange(input1.value,this.value)
+    moneyColourChange(input1.value,this.value)
     updateInputColour(this);
     backgroundChange();
     updateAxisColour();
+    makeItRain();
+
 });
 
-backgroundChange();
-function backgroundChange(){
-    document.body.style.background = "linear-gradient(0deg, #"+input2.value+" -10%, #"+input1.value+" 15%, #ffffff 50%)";
-}
 
-function sakuraColourChange(col1,col2){
-    _hsl = hexToHSL(lerpColor("#"+col1,"#"+col2,0.5));
-    var newH = _hsl.h - baseH;
-    var newS = 100 + (_hsl.l-baseS);
-    var newL = 100 + (_hsl.l-baseL)
-    document.getElementById('snow-bg').style.filter = "brightness(50%) sepia(1) hue-rotate("+ newH +"deg) saturate("+ newS +"%) brightness("+ newL +"%)";
+
+//Lerp Color function by Rosszurowski https://gist.github.com/rosszurowski/67f04465c424a9bc0dae
+const lerpColor = (a, b, amount) =>{ 
+    var ah = parseInt(a.replace(/#/g, ''), 16),
+        ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
+        bh = parseInt(b.replace(/#/g, ''), 16),
+        br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff,
+        rr = ar + amount * (br - ar),
+        rg = ag + amount * (bg - ag),
+        rb = ab + amount * (bb - ab);
+    return '#' + ((1 << 24) + (rr << 16) + (rg << 8) + rb | 0).toString(16).slice(1);
 }
 
 //hexToHsl function by https://gist.github.com/xenozauros/f6e185c8de2a04cdfecf
@@ -85,18 +62,52 @@ function hexToHSL(hex) {
     return HSL;
 }
 
-//Lerp Color function by Rosszurowski https://gist.github.com/rosszurowski/67f04465c424a9bc0dae
-const lerpColor = (a, b, amount) =>{ 
-    var ah = parseInt(a.replace(/#/g, ''), 16),
-        ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
-        bh = parseInt(b.replace(/#/g, ''), 16),
-        br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff,
-        rr = ar + amount * (br - ar),
-        rg = ag + amount * (bg - ag),
-        rb = ab + amount * (bb - ab);
-    return '#' + ((1 << 24) + (rr << 16) + (rg << 8) + rb | 0).toString(16).slice(1);
+backgroundChange();
+function backgroundChange(){
+    document.body.style.background = "linear-gradient(0deg, #"+input2.value+" -10%, #"+input1.value+" 15%, #ffffff 50%)";
 }
 
+//base sepia HSL colour space
+var baseH = 87;
+var baseS = 8;
+var baseL = 86;
+
+moneyColourChange(col1.value,col2.value);
+function moneyColourChange(col1,col2){
+    _hsl = hexToHSL(lerpColor("#"+col1,"#"+col2,0.5));
+    var newH = _hsl.h - baseH;
+    var newS = 100 + (_hsl.l-baseS);
+    var newL = 100 + (_hsl.l-baseL)
+    var bills = document.getElementsByClassName("billsBillsBills");
+    for (var i = 0; i < bills.length; i++) {
+        bills[i].style.filter = "brightness(50%) sepia(1) hue-rotate("+ newH +"deg) saturate("+ newS +"%) brightness("+ newL +"%)";
+        //Do something
+    }
+    //document.getElementById('snow-bg').style.filter = "brightness(50%) sepia(1) hue-rotate("+ newH +"deg) saturate("+ newS +"%) brightness("+ newL +"%)";
+}
+
+//input field colour matching
+updateInputColour(document.getElementById('col1'));
+updateInputColour(document.getElementById('col2'));
+function updateInputColour(_elem){
+    //Ensure correct length of hex code (6 digits)
+    while(_elem.value.length < 6){
+        _elem.value += "f";
+    }
+    if(_elem.value.length > 6){
+        _elem.value = _elem.value.slice(0,6);
+    }
+    //Change background colour of input field
+    _elem.style.backgroundColor = "#"+_elem.value;
+
+    //Change colour of text (black text on light backgrounds, white text on dark backgrounds)
+    if (parseInt(_elem.value.slice(0,2),16)*0.299 + parseInt(_elem.value.slice(2,4),16)*0.587 + parseInt(_elem.value.slice(4,6),16)*0.114 > 186){
+        _elem.style.color = "#000000";
+    } 
+    else{
+        _elem.style.color = "#ffffff";
+    }
+}
 
 function updateAxisColour(){
     var newColour = lerpColor(col1.value,col2.value,0.5);

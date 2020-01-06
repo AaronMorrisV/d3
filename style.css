@@ -92,9 +92,9 @@ body {
 
 .xAxis line {
   width: 200px;
-  -webkit-transform: scaleY(70);
-  -ms-transform: scaleY(70);
-  transform: scaleY(70);
+  -webkit-transform: scaleY(100);
+  -ms-transform: scaleY(100);
+  transform: scaleY(100);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -105,46 +105,37 @@ body {
 .time {
   font-size: 20px; }
 
-#snow-bg {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background-image: url("http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png"), url("http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png");
-  -webkit-animation: snow 10s linear infinite;
-  animation: snow 10s linear infinite;
-  background-size: 600px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
-
-@-webkit-keyframes snow {
-  0% {
-    background-position: 0px 0px, 0px 0px, 0px 0px; }
-  50% {
-    background-position: 500px 500px, 100px 200px, -100px 150px; }
-  100% {
-    background-position: 1000px 1000px, 200px 400px, -200px 300px; } }
-
+/*#snow-bg {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
+    animation: snow 10s linear infinite;
+    background-size: 600px;
+    transition:0.3s;
+}
+  
 @keyframes snow {
-  0% {
-    background-position: 0px 0px, 0px 0px, 0px 0px; }
-  50% {
-    background-position: 500px 500px, 100px 200px, -100px 150px; }
-  100% {
-    background-position: 1000px 1000px, 200px 400px, -200px 300px; } }
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+    100% {background-position: 1000px 1000px, 200px 400px, -200px 300px;}
+}
 
 @media (max-width: 768px) {
-  .woocommerce ul.products li.product,
-  .woocommerce-page ul.products li.product,
-  .woocommerce-page[class*=columns-] ul.products li.product,
-  .woocommerce[class*=columns-] ul.products li.product {
-    width: 100%;
-    float: left;
-    clear: both;
-    margin: 0 7em; } }
+    .woocommerce ul.products li.product, 
+    .woocommerce-page ul.products li.product, 
+    .woocommerce-page[class*=columns-] ul.products li.product,
+    .woocommerce[class*=columns-] ul.products li.product {
+        width: 100%;
+        float: left;
+        clear: both;
+        margin: 0 7em;
+    }
+}
+*/
