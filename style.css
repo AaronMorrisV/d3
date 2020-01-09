@@ -17,6 +17,8 @@ body {
   text-align: center;
   width: 100px;
   border-style: none;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -174,7 +176,8 @@ span.billsBillsBills {
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
-  width: 200px; }
+  width: 200px;
+  pointer-events: none; }
 
 @-webkit-keyframes drop {
   0% {

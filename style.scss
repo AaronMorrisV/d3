@@ -16,8 +16,11 @@ body{
     text-align: center;
     width:100px;
     border-style: none;
+    border:0;
+    background-color: rgba(0,0,0,0);
     transition:0.3s;
     z-index:1000;
+
 }
 #graph{
     position:absolute;
@@ -93,6 +96,7 @@ body{
 .time{
     font-size: 20px;
 }
+
 //CSS immediately below is by http://sarahlesh.com/makeItRain/
 @-webkit-keyframes sway {
 	0%{
@@ -187,6 +191,7 @@ span.billsBillsBills {
   opacity:0.4;
   transition: opacity 1s;
   width: 200px;
+  pointer-events: none;
    }
 //CSS immediately below is by http://sarahlesh.com/makeItRain/
 @-webkit-keyframes drop{

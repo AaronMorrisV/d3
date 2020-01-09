@@ -5,6 +5,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <link rel="stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
     <!--jQuery used for makeItRain() by sarahlesh.com-->
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src = "myd3.js"></script>
@@ -17,11 +18,11 @@
     <div id = "optionWrapper">
         <div class = "option">
             <h2>Color 1</h2>
-            <input id = "col1" class = "colourInput" value="44a28f">
+            <input id = "col1" class = "colourInput" value="#2448A8" type = "color">
         </div>
         <div class = "option">
             <h2>Color 2</h2>
-            <input id = "col2" class = "colourInput" value="c1ebb5">
+            <input id = "col2" class = "colourInput" value="#89E9E4" type = "color">
         </div>
         <div class = "option">
             <h2>Scale</h2>
@@ -38,7 +39,7 @@
 
 <script>
     //Graph initialisation
-    let graph = new Graph(800,600, "Movie Revenue", "movies.csv");
-    graph.graphInit();
+    let graph = new Graph(800,600, 'Movie Revenue');
+    graph.graphInit('#graph');
     graph.makeItRain();
 </script>
