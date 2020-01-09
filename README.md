@@ -5,12 +5,13 @@
 View an example [here](https://aaronmorrisv.github.io/d3).
 
 Add a reference to the following in the head tag of your html file.
->The stylesheet can be found here
+
+The stylesheet can be found [here](https://github.com/AaronMorrisV/d3/blob/master/styleSimple.css).
 ```html
 <script src = "https://d3js.org/d3.v4.js"></script>
 <script src = "myd3.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-<link rel = "stylesheet" href = "style.css">
+<link rel = "stylesheet" href = "styleSimple.css">
 ```
 
 Add the following in your body tag.
